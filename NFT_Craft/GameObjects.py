@@ -1,33 +1,34 @@
 from ursina import *
 
-class Ground:
-    def __init__(self) -> None:
-        self.boxes = []
-        for n in range(50):
-            for k in range(50):
-                box = Button(
-                position=(k, 0, n),
-                color=color.orange,
-                highlight_color=color.lime,
-                model='cube',
-                texture = load_texture('textures/wood'),
-                origin_y = 0.5,
-                parent = scene,
-                tag = "wood"
-                )
-                self.boxes.append(box)
+block_id = 1
+mapping = []
 
-
-class Player(Entity):
-    def __init__(self):
+class Voxel(Button):
+    global mapping
+    def __init__(self, position=(0, 0, 0), texture='assets/grass.png'):
         super().__init__(
-            parent = camera.ui
+            parent=scene,
+            position=position,
+            model='assets/block',
+            origin_y=0.5,
+            texture=texture,
+            color=color.color(0, 0, random.uniform(0.9, 1.0)),
+            scale=0.5
         )
-        self.arm = Entity(
-        parent=camera.ui,
-        model='cube',
-        color=color.blue,
-        position=(0.75, -0.6),
-        rotation= (150, -10,6),
-        scale = (0.2,0.2,1.5)
-        )
+        
+    #destory controller
+    def input(self, key):
+        blocks = [
+            load_texture('assets/grass.png'), # 0
+            load_texture('assets/grass.png'), # 1
+            load_texture('assets/stone.png'), # 2
+            load_texture('assets/gold.png'),  # 3
+            load_texture('assets/lava.png'),  # 4
+        ]
+        if self.hovered:
+            if key == 'left mouse down':
+                pos = self.position + mouse.normal
+                Voxel(position= pos, texture=blocks[block_id])
+                mapping.append({'x':pos.x,'y':pos.y,'z':pos.z,'block':int(block_id)})
+            elif key == 'right mouse down':
+                destroy(self)

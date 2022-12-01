@@ -17,10 +17,9 @@ def lobby(request):
 def room(request):
     return render(request, 'base/room.html')
 
-
 def getToken(request):
     appId = "6c195af2970e48579689b47d0debf9ca"
-    appCertificate = "YOUR APP CERTIFICATE"
+    appCertificate = "acb5f43b05c74985aec64f691cf4311c"
     channelName = request.GET.get('channel')
     uid = random.randint(1, 230)
     expirationTimeInSeconds = 3600

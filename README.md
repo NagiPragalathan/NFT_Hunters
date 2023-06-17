@@ -53,6 +53,24 @@ To start using NFT Hunters, follow these steps:
     
 4. Access the NFT Hunters platform through your web browser at `http://localhost:8000`.
     
+## URLs
+
+The NFT Hunters platform utilizes the following URL patterns:
+
+- `/` and `/home`: These URLs direct users to the `home` view, which represents the main landing page of the platform.
+- `/browse`: Accessing this URL leads to the `browse` view, where users can explore the available NFT-based games in the marketplace.
+- `/profile`: This URL points to the `profile` view, allowing users to view and manage their personal profile and gaming statistics.
+- `/details`: Navigating to this URL leads users to the `details` view, where they can find detailed information about a specific game, including its description, gameplay features, and NFT assets.
+- `/streams`: This URL is associated with the `streams` view, enabling users to access live streaming sessions related to gaming and interact with other players.
+- `/lobby`: Accessing this URL directs users to the `lobby` view, which serves as the virtual gathering place for gamers to socialize, chat, and engage in community activities.
+- `/room/`: This URL pattern is associated with the `room` view, allowing users to join a specific game room or virtual environment to play games with others.
+- `/get_token/`: Navigating to this URL triggers the `getToken` view, which retrieves the authentication token required for accessing specific game features or performing certain actions.
+- `/open_Nft_craft`: Accessing this URL leads to the `open_Nft_craft` view, which enables users to craft or create unique NFT assets using specific game mechanics.
+- `/create_member/`: This URL is associated with the `createMember` view, allowing the creation of new member accounts on the platform.
+- `/get_member/`: Navigating to this URL triggers the `getMember` view, which retrieves member information and details from the database.
+- `/delete_member/`: This URL pattern is associated with the `deleteMember` view, enabling the deletion of a member account from the platform.
+
+
 
 ## Contribution
 

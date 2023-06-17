@@ -7,8 +7,8 @@ from GameObjects import Voxel
 import GameObjects
 
 #choose mode
-mode = int(input("enter the mode[1/0] : "))
-
+# mode = int(input("enter the mode[1/0] : "))
+mode=0
 # app init
 app = Ursina()
 

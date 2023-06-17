@@ -53,6 +53,24 @@ To start using NFT Hunters, follow these steps:
     
 4. Access the NFT Hunters platform through your web browser at `http://localhost:8000`.
     
+## Urls are :
+urlpatterns = [
+    path('',views.home),
+    path('home',views.home),
+    path('browse',views.browse),
+    path('profile',views.profile),
+    path('details',views.details),
+    path('streams',views.streams),
+    path('lobby', views.lobby),
+    path('room/', views.room),
+    path('get_token/', views.getToken),
+    path('open_Nft_craft',views.open_Nft_craft),
+
+    path('create_member/', views.createMember),
+    path('get_member/', views.getMember),
+    path('delete_member/', views.deleteMember),
+]
+
 
 ## Contribution
 
